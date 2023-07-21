@@ -19,6 +19,9 @@ public class Main {
         String productName="Mars";
         System.out.println(vending.getProduct(productName).toString());
 
+        Human vasya = new Human("Вася",100);
+        vasya.setNearestAutomat(vending);
 
+        System.out.println(vasya);
     }
 }

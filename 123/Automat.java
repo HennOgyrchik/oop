@@ -16,8 +16,4 @@ public class Automat {
         }
         return null;
     }
-
-    public Order createOrder(ArrayList<Product> shoppingList){
-        return null;
-    }
 }
