@@ -4,35 +4,35 @@ import java.util.GregorianCalendar;
 public class Human extends Actor implements ActorBehavoir{
     private double money;
     private Automat nearestAutomat;
-public Human (String name, double money){
-    super(name);
-    this.money=money;
-}
+    public Human (String name, double money){
+        super(name);
+        this.money=money;
+    }
 
     @Override
     public void setMakeOrder(boolean flag) {
-
+        isMakeOrder=flag;
     }
 
     @Override
     public void setTakeOrder(boolean flag) {
-
+        isTakeOrder=flag;
     }
 
     @Override
     public boolean isMakeOrder() {
-        return this.isMakeOrder();
+        return isMakeOrder;
     }
 
     @Override
     public boolean isTakeOrder() {
-        return this.isTakeOrder();
+        return isTakeOrder;
     }
-
-    public Order makeOrder(ArrayList<String> deList) {
+    @Override
+    public Order makeOrder(ArrayList<String> desiredProducts) {
         ArrayList<Product> shoppingList = new ArrayList<>();
         Product shopProduct;
-        for (String nameProduct : deList) {
+        for (String nameProduct : desiredProducts) {
             shopProduct=nearestAutomat.getProduct(nameProduct);
             if (shopProduct!=null){
                 shoppingList.add(shopProduct);
@@ -42,7 +42,7 @@ public Human (String name, double money){
         setMakeOrder(true);
 
 
-        return nearestAutomat.createOrder(shoppingList);
+        return nearestAutomat.createOrder(shoppingList,this);
     }
 
     public double getMoney() {
