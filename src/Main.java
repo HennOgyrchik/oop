@@ -37,8 +37,10 @@ public class Main {
         hotAutomat.initProduct(hotList);
         System.out.println(hotAutomat.getProduct("Tea",0.25,60).toString());
 
+
         Human vasya = new Human("Вася",100);
         vasya.setNearestAutomat(vending);
+
         System.out.println(vasya);
 
         Order vasyaOrder = vasya.makeOrder(desiredProducts);
