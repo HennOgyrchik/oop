@@ -1,7 +1,7 @@
 public abstract class Actor {
-    private String name;
-    private boolean isMakeOrder=false;
-    private boolean isTakeOrder=false;
+    private String  name;
+    protected boolean isMakeOrder = false;
+    protected boolean isTakeOrder=false;
 
     public void setName(String name) {
         this.name = name;
@@ -13,8 +13,6 @@ public abstract class Actor {
 
     public Actor(String name){
         this.name=name;
-
     }
-
 
 }
