@@ -8,4 +8,5 @@ public interface ActorBehavoir {
     boolean isTakeOrder();
 
     Order makeOrder(ArrayList<String> deList);
+    ArrayList<String> validateOrder(ArrayList<String> deList);
 }

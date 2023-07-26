@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Automat {
-    List<Product> productList=new ArrayList<>();
+    List<Food> productList=new ArrayList<>();
 
-    public void initProduct(List<Product> productList){
+    public void initProduct(List<Food> productList){
         this.productList=productList;
     }
 
@@ -25,11 +25,7 @@ public class Automat {
  */
         int sum=0;
         for (Product prod : shoppingList) {
-            if(getProduct(prod.getName()).getQuantity()>0){
-                sum+=getProduct(prod.getName()).getPrice();
-            } else {
-                shoppingList.remove(prod);
-            }
+            sum+=getProduct(prod.getName()).getPrice();
         }
 
         Order order = new Order();

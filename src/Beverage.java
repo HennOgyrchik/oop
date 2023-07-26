@@ -19,4 +19,6 @@ public class Beverage extends Product{
     public void setVolume(double volume) {
         this.volume = volume;
     }
+
+
 }
