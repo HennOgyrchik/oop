@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Automat {
-    List<Food> productList=new ArrayList<>();
+public class Automat implements AddInAutomat<Product>{
+    List<Product> productList=new ArrayList<>();
 
-    public void initProduct(List<Food> productList){
+    public void initProduct(List<Product> productList){
         this.productList=productList;
     }
 
@@ -17,7 +17,7 @@ public class Automat {
         return null;
     }
 
-    public Order createOrder(ArrayList<Product> shoppingList, Human man){
+    public Order<Product> createOrder(ArrayList<Product> shoppingList, Human man){
 /*
 нужно пройти по продуктам, проверить наличие (>0), "запомнить цену"
 Создать объек Order с полями List<Product>, который содержит только продукты из наличия, и поле стоимость - сумма цен продуктов, входящих в заказ.
@@ -28,11 +28,16 @@ public class Automat {
             sum+=getProduct(prod.getName()).getPrice();
         }
 
-        Order order = new Order();
+        Order<Product> order = new Order<Product>();
         order.setCost(sum);
         order.setProducts(shoppingList);
         order.setMan(man);
 
         return order;
+    }
+
+    @Override
+    public void addInAutomat(Product product) {
+        productList.add(product);
     }
 }

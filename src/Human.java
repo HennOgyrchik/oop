@@ -31,7 +31,7 @@ public class Human extends Actor implements ActorBehavoir{
         return isTakeOrder;
     }
     @Override
-    public Order makeOrder(ArrayList<String> desiredProducts) {
+    public Order<Product> makeOrder(ArrayList<String> desiredProducts) {
         ArrayList<Product> shoppingList = new ArrayList<>();
         for (String nameProduct : desiredProducts) {
             shoppingList.add(nearestAutomat.getProduct(nameProduct));

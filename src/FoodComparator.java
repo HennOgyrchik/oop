@@ -1,14 +1,14 @@
 import java.util.Comparator;
 
-public class FoodComparator implements Comparator<Food> {
+public class FoodComparator implements Comparator<Product> {
 
     @Override
-    public int compare(Food o1, Food o2) {
-        if (o1.weight>o2.weight) {
+    public int compare(Product o1, Product o2) {
+        if (o1.getPrice()>o2.getPrice()) {
             return 1;
         }
         else {
-            if (o1.weight<o2.weight) return -1;
+            if (o1.getPrice()<o2.getPrice()) return -1;
         }
         return 0;
     }

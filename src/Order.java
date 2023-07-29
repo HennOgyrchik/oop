@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Order {
+public class Order<T extends Product> {
     private ArrayList<Product> products;
     private Human man;
 

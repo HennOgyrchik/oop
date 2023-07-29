@@ -7,13 +7,15 @@ public class Main {
         Food product1 = new Food("Twix", 80,1, new GregorianCalendar(2023,10,10),0.3);
         Food product2= new Food("Mars", 90, 50, new GregorianCalendar(2023,10,10),0.2);
         Food product3=new Food("Sneakers",60,15,new GregorianCalendar(2023,10,10),0.15);
+        Beverage beverage1=new Beverage("Ice tea", 2,5,new GregorianCalendar(2023,10,10),0.5);
 
         Automat vending = new Automat();
 
-        ArrayList<Food> productList=new  ArrayList<>();
+        ArrayList<Product> productList=new  ArrayList<>();
         productList.add(product1);
         productList.add(product2);
         productList.add(product3);
+        productList.add(beverage1);
 
         vending.initProduct(productList);
 
@@ -40,17 +42,15 @@ public class Main {
         vasya.setNearestAutomat(vending);
 
         vasya.validateOrder(desiredProducts);
-        Order vasyaOrder = vasya.makeOrder(desiredProducts);
-        //System.out.println(vasyaOrder);
+        Order<Product> vasyaOrder = vasya.makeOrder(desiredProducts);
+        System.out.println(vasyaOrder);
 
-        hotList.sort(new BeverageComparator());
-        System.out.println(hotList);
+        //hw 4
+        Food product4=new Food("Cake",10,3,new GregorianCalendar(2023,10,10),0.2);
+        HotBeverage hot4=new HotBeverage("Latte",50,10,new GregorianCalendar(2023,10,10),0.5,75);
 
-        productList.sort(new FoodComparator());
-        System.out.println(productList);
-
-        hotList.sort(new HotBeverageComparator());
-        System.out.println(hotList);
+        vending.addInAutomat(product4);
+        hotAutomat.addInAutomat(hot4);
 
     }
 }

@@ -47,7 +47,7 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "Name: "+name+"\nPrice:"+price+"\nQuantity:"+quantity+"\nBest before:"+bestBefore.get(Calendar.YEAR)+"-"+bestBefore.get(Calendar.MONTH);
+        return "\nName: "+name+"\nPrice:"+price+"\nQuantity:"+quantity+"\nBest before:"+bestBefore.get(Calendar.YEAR)+"-"+bestBefore.get(Calendar.MONTH);
     }
 
 
