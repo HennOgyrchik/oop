@@ -1,5 +1,6 @@
 import java.util.Calendar;
-
+//Принцип единственной ответственности.
+//Принцип открытости/закрытости
 public class HotBeverage extends Beverage{
     private int temperature;
 

@@ -48,7 +48,7 @@ public class Main {
         //hw 4
         Food product4=new Food("Cake",10,3,new GregorianCalendar(2023,10,10),0.2);
         HotBeverage hot4=new HotBeverage("Latte",50,10,new GregorianCalendar(2023,10,10),0.5,75);
-
+// Принцип инверсии зависимостей
         vending.addInAutomat(product4);
         hotAutomat.addInAutomat(hot4);
 

@@ -1,5 +1,6 @@
 import java.util.Calendar;
-
+//Принцип единственной ответственности.
+//Принцип открытости/закрытости
 public class Food extends Product{
     double weight;
     public Food (String name, int price, int quantity, Calendar bestBefore, double weight){
